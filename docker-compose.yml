@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - data:/var/lib/postgresql/data
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ".:/src"
+    ports:
+      - "8000:8000"
+    depends_on:
+     - db
+
+volumes:
+  data:
+    external: true
