@@ -10,4 +10,4 @@ WORKDIR /src
 RUN apt-get update
 RUN pip install -r requirements.txt
 
-CMD gunicorn -w 2 -b 0.0.0.0:8000 rd.wsgi
+CMD gunicorn -w 2 -b 0.0.0.0:80 rd.wsgi

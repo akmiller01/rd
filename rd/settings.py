@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static/')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+
+# Tinymce settings
+
+TINYMCE_JS_URL = os.path.join(STATIC_URL,'tiny_mce/tiny_mce.js')
+TINYMCE_JS_ROOT = os.path.join(STATIC_URL,'tiny_mce')
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "spellchecker,media,fullscreen,print,save,preview",
+    'theme': "simple",
+}
+TINYMCE_COMPRESSOR = True
